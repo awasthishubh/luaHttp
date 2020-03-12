@@ -1,2 +1,4 @@
 print("Starting Lua Script...")
-httpSimple()
+
+res=httpSimple("Request")
+print(res)
