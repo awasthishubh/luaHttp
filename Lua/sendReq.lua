@@ -1,4 +1,4 @@
 print("Starting Lua Script...")
 
-res=httpSimple("Request")
+res=httpSimple("http://httpbin.org/get")
 print(res)
