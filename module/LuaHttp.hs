@@ -11,8 +11,10 @@ module LuaHttp where
     luaHttp = do
         manager <- liftIO $ newManager tlsManagerSettings
         i <- peek 1 :: Lua String
+        j <- peek 2 :: Lua String
         liftIO $ putStrLn $ "Sending Request to: "++ i
         initialRequest <- parseRequest i
-        response <- liftIO $ httpLbs initialRequest manager  
+        let request = initialRequest { method = C8.pack j}
+        response <- liftIO $ httpLbs request manager  
         pushstring $ C8.pack $ L8.unpack $ responseBody response
         return 1
