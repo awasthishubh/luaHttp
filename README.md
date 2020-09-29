@@ -1,5 +1,5 @@
-# LuaHttp
-This is a very small and minimalistic version (completed in a few hours) of http client for Lua.
+# LuaHttp: A Lua interface to the http-client
+This is a very small and minimalistic version of http client for Lua. It makes use of HsLua modules to power Lua to make HTTP/S requests. 
 * Returns the response body as a plain text.
 * Supports https request
 * Supports multiple methods(get, post, ...)
